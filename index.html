@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/base.css" />
+    <!-- estilo -->
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,25 +16,42 @@
     <title>Quais as tarefas de hoje?</title>
   </head>
   <body>
+    <div id="imageContainer"></div>
+
     <h1>Salve a sua tarefa próxima tarefa</h1>
 
     <div id="formContainer">
-      <form action="" id="formTask">
-        <input type="text" name="inputTask" id="inputTask" placeholder="Qual é a sua próxima tarefa?">
-        <button> <img src="svgs/add-20-regular.svg" alt="adicionar"> </button>
+      <form action="" id="formTask" class="task">
+        <!-- botão para adicionar tasks -->
+        <input
+          class="task"
+          type="text"
+          name="inputTask"
+          id="inputTask"
+          placeholder="Qual é a sua próxima tarefa?"
+        />
+
+        <button class="button">
+          <img src="svgs/add-20-regular.svg" alt="adicionar" />
+        </button>
       </form>
     </div>
 
-    <h2>
-      Estas são as suas próximas tarefas:
-    </h2>
+    <h2>Estas são as suas próximas tarefas:</h2>
 
     <div id="tasksContainer">
       <ul id="ulTasks">
         <li class="task">
           Teste
-          <img src="svgs/round-done.svg" alt="confirmar">
-          <img src="svgs/x.svg" alt="apagar">
+
+          <div id="containerIcons">
+            <img
+              src="svgs/round-done.svg"
+              alt="confirmar"
+              class="button confirm"
+            />
+            <img src="svgs/x.svg" alt="apagar" class="button delete" />
+          </div>
         </li>
       </ul>
     </div>
