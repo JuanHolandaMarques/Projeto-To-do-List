@@ -30,5 +30,8 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "cSpell.language": "en,pt-BR"
+  "cSpell.language": "en,pt-BR",
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  }
 }

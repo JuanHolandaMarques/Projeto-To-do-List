@@ -1,0 +1,72 @@
+* {
+  font-family: 'Merienda', Arial;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2.25rem;
+
+  background-color: #242225;
+  color: #ffffff;
+
+}
+
+#imageContainer {
+  background-image: url('/imgs/markus-winkler-m-2H2zJQ2wA-unsplash\ 1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 16.8rem;
+  width: 100vw;
+}
+
+/*tasks*/
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  text-indent: 10px;
+
+  border: none;
+  background-color: rgba(1, 1, 1, 0.31);
+  color: white;
+
+  width: 19rem;
+  height: 2.3rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(1, 1, 1, 0.31);
+  color: white;
+  border: none;
+  
+
+  height: 2.3rem;
+  width: 2.5rem;
+}
+#containerIcons{
+  display: flex;
+  height: 100%;
+}
+
+.confirm:hover{
+  background-color: green;
+}
+
+.delete:hover{
+  background-color: red;
+}
