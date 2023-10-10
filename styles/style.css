@@ -1,5 +1,18 @@
+/* animações */
+@keyframes clickAnimation {
+  from {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  to {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
 * {
-  font-family: 'Merienda', Arial;
+  font-family: "Merienda", Arial;
   text-align: center;
 
   margin: 0;
@@ -17,11 +30,11 @@ body {
 
   background-color: #242225;
   color: #ffffff;
-
 }
 
+/* img no topo da pagina */
 #imageContainer {
-  background-image: url('/imgs/markus-winkler-m-2H2zJQ2wA-unsplash\ 1.jpg');
+  background-image: url("/imgs/markus-winkler-m-2H2zJQ2wA-unsplash\ 1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -53,20 +66,21 @@ body {
   background-color: rgba(1, 1, 1, 0.31);
   color: white;
   border: none;
-  
 
-  height: 2.3rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2em;
 }
-#containerIcons{
+
+/* container com os botões de confim e delete */
+#containerIcons {
   display: flex;
   height: 100%;
 }
 
-.confirm:hover{
+.confirm:hover {
   background-color: green;
 }
 
-.delete:hover{
+.delete:hover {
   background-color: red;
 }

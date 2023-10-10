@@ -33,5 +33,8 @@
   "cSpell.language": "en,pt-BR",
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "cSpell.enableFiletypes": [
+    "postcss"
+  ]
 }
