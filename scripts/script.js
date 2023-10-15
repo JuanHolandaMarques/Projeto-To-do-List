@@ -42,8 +42,8 @@ buttonAdicionarTask.addEventListener("click", () => {
       })
 
       //evento de concluir task
-      const confirmButton = newTask.querySelector(".confirm").addEventListener("click", () => {
-        confirmTask(this)
+      const confirmButton = newTask.querySelector("#iconConfirm").addEventListener("click", () => {
+        confirmTask(newTask)
       })
 
     //limpar texto
@@ -61,7 +61,7 @@ function removeTask(task){
 //função de click para concluir task
 
 function confirmTask(task){
-  const taskComplete = task.parentNode()
+  const taskComplete = task
 
   taskComplete.classList.toggle("done")
 }
