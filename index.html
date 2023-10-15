@@ -31,7 +31,7 @@
           placeholder="Qual é a sua próxima tarefa?"
         />
 
-        <button class="button">
+        <button id="addTask" class="button">
           <img
             class="icon"
             id="iconAdicionar"
@@ -45,9 +45,9 @@
     <h2>Estas são as suas próximas tarefas:</h2>
 
     <div id="tasksContainer">
-      <ul id="ulTasks">
-        <li class="task">
-          Teste
+      <ul id="listTasks">
+        <li  class="task template hide">
+          <span class="taskContent"></span>
           <div id="containerIcons">
             <img
               id="iconConfirm"
