@@ -28,18 +28,20 @@ body {
   align-items: center;
   row-gap: 2.25rem;
 
+  margin-bottom: 1rem;
+
   background-color: #242225;
   color: #ffffff;
 }
 
 /* img no topo da pagina */
 #imageContainer {
-  background-image: url("/imgs/markus-winkler-m-2H2zJQ2wA-unsplash\ 1.jpg");
+  background-image: url("../imgs/markus-winkler-m-2H2zJQ2wA-unsplash 1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
   height: 16.8rem;
-  width: 100vw;
+  width: 100%;
 }
 
 /*tasks*/
@@ -80,26 +82,19 @@ body {
 
   min-height: 2.3rem;
   max-height: 100%;
-  width: 2em;
 }
 
 .icon { 
-
-  padding: 0.4rem;
-  height: 100%;
+  padding: 0.2rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }.icon:hover{
-  background-color: rgba(29, 28, 28, 0.31);
+  background-color: rgba(32, 32, 32, 0.31);
 }
 
 /* container com os botões de confim e delete */
 #containerIcons {
   display: flex;
-}
-
-.confirm:hover, .delete:hover{
-  height: 2.2rem;
 }
 
 .done{
