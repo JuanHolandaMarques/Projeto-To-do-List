@@ -12,10 +12,8 @@ icons.forEach((icon) => {
   })
 })
 
-// adicionando tasks
-const buttonAdicionarTask = document.querySelector("#addTask")
 //função de click para adicionar tasks
-buttonAdicionarTask.addEventListener("click", () => {
+function addFunction() {
   const inputTask = document.querySelector("#inputTask").value
   //verificando se o campo do input esta vazio
   if (inputTask) {
@@ -47,18 +45,22 @@ buttonAdicionarTask.addEventListener("click", () => {
       })
 
     //limpar texto
-    document.querySelector("#inputTask").value = ""
+      document.querySelector("#inputTask").value = ""
   }
+}
+
+// Função de click
+const buttonAdicionarTask = document.querySelector("#addTask")
+buttonAdicionarTask.addEventListener("click", () => {
+  addFunction()
 })
 
-//função remover task
+
 function removeTask(task){
   const taskDelete = task
 
   taskDelete.classList.add("hide")
 }
-
-//função de click para concluir task
 
 function confirmTask(task){
   const taskComplete = task
@@ -68,8 +70,9 @@ function confirmTask(task){
 
 //retirando envio de form do enter
 const inputFormTask = document.querySelector("#formTask")
-inputFormTask.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault()
+inputFormTask.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault()
+    addFunction()
   }
 })
