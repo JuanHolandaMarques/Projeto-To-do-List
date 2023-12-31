@@ -1,4 +1,10 @@
+// Variables
 const icons = document.querySelectorAll(".icon")
+const buttonAddTask = document.querySelector("#addTask")
+const buttonRemoveTask = document.querySelector("#iconDelete")
+const taskTemplate = document.querySelector(".template")
+let inputTask = document.querySelector("#inputTask")
+
 // animação de click
 icons.forEach((icon) => {
   icon.addEventListener("click", (event) => {
@@ -12,8 +18,45 @@ icons.forEach((icon) => {
   })
 })
 
-//função de click para adicionar tasks
-function addFunction() {
+function clonarTemplate(template) {
+  const clone = template.cloneNode(true)
+  clone.classList.remove("hide")
+  clone.classList.remove("template")
+
+  //evento de remover tasks
+  clone.querySelector("#iconDelete").addEventListener("click", () => {
+    clone.classList.add("hide")
+  })
+  //evento de concluir tasks
+  clone.querySelector("#iconConfirm").addEventListener("click", () => {
+    clone.classList.toggle("done")
+  })
+  
+  return clone
+}
+
+class TaskList {
+  constructor(template) {
+    this.list = document.querySelector("#listTasks")
+    this.template = template
+  }
+
+  addTask(task) {
+    let newTask = clonarTemplate(this.template)
+    newTask.cloneNode(true)
+    newTask.querySelector(".taskContent").textContent = task
+
+    this.list.appendChild(newTask)
+  }
+}
+// instanciando a classe TaskList
+const taskList = new TaskList(taskTemplate)
+
+function addTask() {
+  taskList.addTask(inputTask.value)
+}
+
+/*function addFunction() {
   const inputTask = document.querySelector("#inputTask").value
   //verificando se o campo do input esta vazio
   if (inputTask) {
@@ -48,31 +91,25 @@ function addFunction() {
       document.querySelector("#inputTask").value = ""
   }
 }
+*/
 
 // Função de click
-const buttonAdicionarTask = document.querySelector("#addTask")
-buttonAdicionarTask.addEventListener("click", () => {
-  addFunction()
+buttonAddTask.addEventListener("click", () => {
+  addTask()
 })
 
-
-function removeTask(task){
-  const taskDelete = task
-
-  taskDelete.classList.add("hide")
-}
-
-function confirmTask(task){
-  const taskComplete = task
-
-  taskComplete.classList.toggle("done")
-}
 
 //retirando envio de form do enter
 const inputFormTask = document.querySelector("#formTask")
 inputFormTask.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault()
-    addFunction()
+    addTask()
+
+    icons.style.animation = "clickAnimation 0.5s ease-in-out infinite alternate"
+
+    setTimeout(() => {
+      icons.style.animation = "none"
+    }, 500)
   }
 })
